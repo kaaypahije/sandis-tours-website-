@@ -28,13 +28,19 @@ For Vercel, set the same env vars in Project Settings -> Environment Variables.
 
 ## 2. Database Setup
 
-For Hostinger phpMyAdmin, import these files in this order:
+For Hostinger phpMyAdmin, use the SQL files in `hostinger-import`.
 
-1. `sandis.sql`
-2. `hostinger-default-data.sql`
+Option A: import these files in this order:
 
-The first file creates all tables and the second file ensures default holiday
-categories and the admin login exist.
+1. `hostinger-import/01-schema.sql`
+2. `hostinger-import/02-default-data.sql`
+
+Option B: import one combined file:
+
+- `hostinger-import/hostinger-full-import.sql`
+
+The schema file creates all tables and the default data file ensures default
+holiday categories and the admin login exist.
 
 Run schema initialization:
 
